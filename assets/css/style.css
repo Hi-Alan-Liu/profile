@@ -898,7 +898,11 @@ p {
     color: #754ef9;
     line-height: 56px; }
   .single-service .service-content {
+    text-align: start;
     margin-top: 11px; }
+    .single-service .service-content h4 {
+      text-align: center;
+    }
     .single-service .service-content .service-title a {
       font-size: 22px;
       font-weight: 600;
