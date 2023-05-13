@@ -926,6 +926,17 @@ p {
 .border-end {
   border-right: 1px solid #dee2e6!important;
 }
+.badge {
+  padding: 0.25em 0.5em;
+}
+.row:hover .card .card-title {
+  color:#007bff!important;
+}
+@media (max-width: 1200px) {
+  .row:hover .badge {
+    background-color: #007bff!important;
+  }
+}
 /*===========================
     4.CALL TO ACTION css 
 ===========================*/
