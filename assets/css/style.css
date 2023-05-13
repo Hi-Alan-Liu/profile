@@ -16,7 +16,7 @@
     1.COMMON
 	2.HEADER
     3.ABOUT
-    4.SERVICES
+    4.SKILLS
     4.CALL TO ACTION
     5.WORK
     6.PRICING
@@ -869,18 +869,18 @@ p {
       width: 0; }
 
 /*===========================
-        4.SERVICES css 
+        4.SKILL css 
 ===========================*/
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .services-area {
+  .skill-area {
     padding-top: 90px;
     padding-bottom: 100px; } }
 @media (max-width: 767px) {
-  .services-area {
+  .skill-area {
     padding-top: 70px;
     padding-bottom: 80px; } }
 
-.single-service {
+.single-skill {
   background-color: #fff;
   border: 1px solid #eceff8;
   border-radius: 5px;
@@ -891,19 +891,19 @@ p {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s; }
   @media (max-width: 767px) {
-    .single-service {
+    .single-skill {
       padding: 15px; } }
-  .single-service .service-icon i {
+  .single-skill .skill-icon i {
     font-size: 60px;
     color: #754ef9;
     line-height: 56px; }
-  .single-service .service-content {
+  .single-skill .skill-content {
     text-align: start;
     margin-top: 11px; }
-    .single-service .service-content h4 {
+    .single-skill .skill-content h4 {
       text-align: center;
     }
-    .single-service .service-content .service-title a {
+    .single-skill .skill-content .skill-title a {
       font-size: 22px;
       font-weight: 600;
       color: #32333c;
@@ -913,9 +913,9 @@ p {
       -ms-transition: all 0.3s ease-out 0s;
       -o-transition: all 0.3s ease-out 0s;
       transition: all 0.3s ease-out 0s; }
-      .single-service .service-content .service-title a:hover {
+      .single-skill .skill-content .skill-title a:hover {
         color: #754ef9; }
-  .single-service:hover {
+  .single-skill:hover {
     -webkit-box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
     -moz-box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
     box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23); }
