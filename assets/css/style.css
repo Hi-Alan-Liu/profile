@@ -1217,15 +1217,19 @@ p {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #754ef9;
     padding: 25px;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
     -ms-transition: all 0.3s ease-out 0s;
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s; }
+    @media (max-width: 1200px) {
+      .single-blog .blog-content {
+        width: 100%; } }
     @media (max-width: 767px) {
       .single-blog .blog-content {
+        width: 100%;
         padding: 20px; } }
     .single-blog .blog-content .blog-title a {
       font-size: 22px;
@@ -1236,7 +1240,7 @@ p {
       -ms-transition: all 0.3s ease-out 0s;
       -o-transition: all 0.3s ease-out 0s;
       transition: all 0.3s ease-out 0s;
-      color: #32333c; }
+      color: #fff; }
       @media (max-width: 767px) {
         .single-blog .blog-content .blog-title a {
           font-size: 18px; } }
