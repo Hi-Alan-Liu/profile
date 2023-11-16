@@ -48,12 +48,12 @@
 
         scrollLink.each(function() {
 
-          var sectionOffset = $(this.hash).offset().top - 73;
+            var sectionOffset = $(this.hash).offset().top - 73;
 
-          if ( sectionOffset <= scrollbarLocation ) {
-            $(this).parent().addClass('active');
-            $(this).parent().siblings().removeClass('active');
-          }
+            if ( sectionOffset <= scrollbarLocation ) {
+                $(this).parent().addClass('active');
+                $(this).parent().siblings().removeClass('active');
+            }
         });
     });
     
@@ -91,13 +91,16 @@
     
     //===== Magnific Popup
     
-    $('.image-popup').magnificPopup({
-      type: 'image',
-      gallery:{
-        enabled:true
-      }
+    $('.video-popup').magnificPopup({
+        type: 'iframe'
     });
     
+    $('.image-popup').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled: true
+        }
+    });
     
     //===== Back to top
     
