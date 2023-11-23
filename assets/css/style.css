@@ -876,7 +876,7 @@ p {
     padding: 10px;
     box-shadow: 1px 1px 5px #666;
     border-radius: 10px;
-    transition: all 1s;
+    transition: 1s;
     width: 100%;
   }
 
@@ -885,7 +885,7 @@ p {
     transform: rotate(7deg);
     left: 60px;
     z-index: 0;
-    transition: z-index transform 3s;
+    transition: z-index 3s transform 3s;
   }
 
   .image:nth-child(1):hover {
@@ -898,7 +898,7 @@ p {
     transform: rotate(-7deg);
     left: -60px;
     z-index: 0;
-    transition: z-index transform 3s;
+    transition: z-index 3s transform 3s;
   }
 
   .image:nth-child(2):hover {
@@ -909,7 +909,7 @@ p {
   .image:nth-child(3) {
     transform: rotate(0deg);
     z-index: 0;
-    transition: z-index transform 3s;
+    transition: z-index 3s transform 3s;
   }
 
   .image:nth-child(3):hover {
