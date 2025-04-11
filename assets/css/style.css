@@ -871,6 +871,7 @@ p {
 .about-image {
   position: absolute;
   width: 80%;
+  margin-top: 50px;
   .image {
     border: 1px solid wheat;
     padding: 10px;
