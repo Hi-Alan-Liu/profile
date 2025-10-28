@@ -1542,3 +1542,9 @@ p.form-message.success, p.form-message.error {
         transform: translateY(-50%); }
         
 /*# sourceMappingURL=style.css.map */
+
+li {
+  list-style: none;       /* 移除原生的圓點 */
+  margin-left: 0;         /* 取消左邊縮排 */
+  padding-left: 0;
+}
