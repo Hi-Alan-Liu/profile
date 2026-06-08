@@ -15,7 +15,7 @@
         '#about .about-content',
         '#skill .single-skill',
         '#experience .col.py-2',
-        '#work .single-work',
+        '#work .pf-card',
         '.section-title'
     ];
 

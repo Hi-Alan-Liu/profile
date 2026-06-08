@@ -13,9 +13,9 @@ body {
 }
 
 /*------------------------------------------------------
-  Hero: animated gradient name + entrance
+  Reusable animated gradient text
 ------------------------------------------------------*/
-.header-content-right .title .grad-text {
+.grad-text {
     background: linear-gradient(90deg, #5e2ced, #a531e0, #ff5b94, #5e2ced);
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -76,11 +76,10 @@ body {
 }
 
 /*------------------------------------------------------
-  Card hover polish
+  Card hover polish (skills + experience)
 ------------------------------------------------------*/
 .single-skill,
-#experience .card.shadow,
-.single-work {
+#experience .card.shadow {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -90,18 +89,152 @@ body {
     box-shadow: 0 18px 40px rgba(94, 44, 237, 0.15);
 }
 
-.single-work:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+/*------------------------------------------------------
+  Portfolio: glassmorphism cards
+------------------------------------------------------*/
+.pf-card {
+    position: relative;
+    margin-top: 30px;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: #11112a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* clickable portfolio titles shouldn't look like dead links */
-.blog-title a {
-    transition: color 0.25s ease;
+.pf-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 26px 50px rgba(94, 44, 237, 0.25);
 }
 
-.blog-title a:hover {
-    color: #5e2ced;
+.pf-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.pf-card:hover .pf-thumb {
+    transform: scale(1.08);
+}
+
+/* dark scrim so the glass panel + text stay readable on any image */
+.pf-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 8, 24, 0.78) 0%, rgba(8, 8, 24, 0.15) 45%, rgba(8, 8, 24, 0) 70%);
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+/* frosted glass info panel */
+.pf-glass {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    z-index: 2;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: rgba(23, 20, 45, 0.42);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    transition: transform 0.35s ease;
+}
+
+.pf-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.pf-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.pf-tags span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* action row: revealed/expanded on hover */
+.pf-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+}
+
+.pf-card:hover .pf-actions {
+    max-height: 60px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.pf-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.pf-actions .pf-preview {
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+}
+
+.pf-actions .pf-preview:hover {
+    background: rgba(255, 255, 255, 0.32);
+    transform: scale(1.08);
+}
+
+.pf-actions .pf-go {
+    padding: 9px 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #5e2ced, #a531e0);
+    box-shadow: 0 6px 16px rgba(94, 44, 237, 0.4);
+}
+
+.pf-actions .pf-go:hover {
+    transform: translateX(3px);
+}
+
+/* touch / no-hover devices and small screens: always show the actions */
+@media (hover: none), (max-width: 991px) {
+    .pf-actions {
+        max-height: 60px;
+        opacity: 1;
+        margin-top: 12px;
+    }
 }
 
 /*------------------------------------------------------
@@ -142,7 +275,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .reveal,
     .header-content-right,
-    .header-content-right .title .grad-text,
+    .grad-text,
+    .pf-card:hover .pf-thumb,
     .work-hidden.show-anim {
         opacity: 1 !important;
         transform: none !important;
