@@ -1,0 +1,152 @@
+/*======================================================
+  Custom enhancements (added on top of the template)
+  - subtle, professional motion & polish
+  - keep all bespoke styles here so the template files
+    (style.css / default.css) stay untouched
+======================================================*/
+
+/* Fix: kill the tiny horizontal scroll on mobile caused by
+   Bootstrap .row negative margins extending past the viewport */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/*------------------------------------------------------
+  Hero: animated gradient name + entrance
+------------------------------------------------------*/
+.header-content-right .title .grad-text {
+    background: linear-gradient(90deg, #5e2ced, #a531e0, #ff5b94, #5e2ced);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientFlow 6s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header-content-right {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroIn 0.9s ease forwards 0.2s;
+}
+
+@keyframes heroIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing subtitle */
+#typed-roles {
+    display: inline;
+}
+
+.typed-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 3px;
+    background: currentColor;
+    transform: translateY(2px);
+    animation: caretBlink 0.8s steps(1) infinite;
+}
+
+@keyframes caretBlink {
+    50% { opacity: 0; }
+}
+
+/*------------------------------------------------------
+  Scroll reveal (class added by custom.js)
+------------------------------------------------------*/
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/*------------------------------------------------------
+  Card hover polish
+------------------------------------------------------*/
+.single-skill,
+#experience .card.shadow,
+.single-work {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-skill:hover,
+#experience .card.shadow:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(94, 44, 237, 0.15);
+}
+
+.single-work:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* clickable portfolio titles shouldn't look like dead links */
+.blog-title a {
+    transition: color 0.25s ease;
+}
+
+.blog-title a:hover {
+    color: #5e2ced;
+}
+
+/*------------------------------------------------------
+  Portfolio: collapse extra works behind a toggle
+------------------------------------------------------*/
+.work-hidden {
+    display: none;
+}
+
+.work-hidden.show-anim {
+    display: block;
+    animation: workIn 0.5s ease forwards;
+}
+
+@keyframes workIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#work-toggle {
+    cursor: pointer;
+}
+
+.work-more .github-more {
+    display: inline-block;
+    margin-top: 18px;
+    color: #777;
+    transition: color 0.25s ease;
+}
+
+.work-more .github-more:hover {
+    color: #5e2ced;
+}
+
+/*------------------------------------------------------
+  Respect reduced-motion preference
+------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .header-content-right,
+    .header-content-right .title .grad-text,
+    .work-hidden.show-anim {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
