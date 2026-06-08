@@ -245,6 +245,232 @@ body {
 }
 
 /*------------------------------------------------------
+  Section subtitle (shared by About / Skill / Experience)
+------------------------------------------------------*/
+.section-title p {
+    color: #8a8fb0;
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+/*------------------------------------------------------
+  About: name accent + contact info chips
+------------------------------------------------------*/
+.about-content .about-title {
+    position: relative;
+    padding-left: 18px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.about-content .about-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    bottom: 3px;
+    width: 5px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #5e2ced, #ff5b94);
+}
+
+.about-content ul.clearfix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 34px;
+    padding: 0;
+    list-style: none;
+}
+
+.about-content ul.clearfix li {
+    float: none;
+    width: auto;
+    list-style: none;
+    margin: 0;
+}
+
+.about-content .single-info {
+    min-width: 0;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #ececf4;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-content .info-text {
+    min-width: 0;
+}
+
+.about-content .info-text p {
+    word-break: break-word;
+}
+
+@media (max-width: 575px) {
+    .about-content ul.clearfix {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-content .single-info:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(94, 44, 237, 0.12);
+}
+
+.about-content .info-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-right: 14px;
+    background: linear-gradient(135deg, #5e2ced, #a531e0);
+    box-shadow: 0 6px 14px rgba(94, 44, 237, 0.3);
+}
+
+.about-content .info-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.about-content .info-text p {
+    margin: 0;
+    color: #555;
+    font-weight: 500;
+}
+
+/*------------------------------------------------------
+  Skill: gradient icon badge + tag chips
+------------------------------------------------------*/
+.single-skill {
+    padding: 38px 26px 34px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #eef0f6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.single-skill .skill-icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #5e2ced, #a531e0);
+    box-shadow: 0 10px 24px rgba(94, 44, 237, 0.35);
+}
+
+.single-skill .skill-icon i {
+    font-size: 32px;
+    color: #fff;
+}
+
+.single-skill .skill-title {
+    font-weight: 700;
+}
+
+.single-skill hr {
+    width: 50px;
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #5e2ced, #ff5b94);
+    margin: 12px auto 20px;
+    opacity: 1;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.skill-tags span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4a4a68;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #f3f1fb;
+    border: 1px solid #e7e3f8;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.skill-tags span:hover {
+    background: linear-gradient(135deg, #5e2ced, #a531e0);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/*------------------------------------------------------
+  Experience: timeline accent + tag chips
+------------------------------------------------------*/
+#experience .card.radius-15 {
+    position: relative;
+    border: none;
+    border-radius: 16px !important;
+    overflow: hidden;
+}
+
+#experience .card.radius-15::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #5e2ced, #ff5b94);
+}
+
+#experience .card .card-title {
+    color: #1f1f3a !important;
+    font-weight: 700;
+}
+
+#experience .card .float-end {
+    color: #5e2ced !important;
+    font-weight: 600;
+}
+
+#experience .badge {
+    background: linear-gradient(135deg, #5e2ced, #a531e0) !important;
+    color: #fff !important;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: none !important;
+}
+
+#experience .border-end {
+    border-color: rgba(94, 44, 237, 0.25) !important;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.exp-tags span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #5e2ced;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(94, 44, 237, 0.08);
+    border: 1px solid rgba(94, 44, 237, 0.18);
+}
+
+/*------------------------------------------------------
   Respect reduced-motion preference
 ------------------------------------------------------*/
 @media (prefers-reduced-motion: reduce) {
