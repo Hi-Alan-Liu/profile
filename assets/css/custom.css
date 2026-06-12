@@ -332,8 +332,8 @@ body {
     box-shadow: 0 6px 14px rgba(58, 20, 160, 0.35);
 }
 
-.about-content .info-icon i {
-    color: #fff;
+.about-content .single-info .info-icon i {
+    color: #fff !important;
     font-size: 23px;
     line-height: 1;
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
@@ -422,6 +422,14 @@ body {
     align-items: center;
 }
 
+.logo-item .logo-img {
+    height: 22px;
+    width: auto;
+    max-width: 56px;
+    margin: 5px 0;
+    object-fit: contain;
+}
+
 /* GitHub / Unity logos are dark monochrome — nudge to brand neutral */
 .logo-item .devicon-github-original::before,
 .logo-item .devicon-unity-original::before {
@@ -495,13 +503,13 @@ body {
 #experience .badge {
     background: linear-gradient(135deg, #5e2ced, #a531e0) !important;
     color: #fff !important;
-    font-size: 11px;
-    padding: 7px 10px;
-    border-radius: 14px;
+    font-size: 10px;
+    padding: 7px 8px;
+    border-radius: 999px;
     border: none !important;
-    white-space: normal;
-    line-height: 1.4;
-    max-width: 100%;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
 }
 
 #experience .border-end {
