@@ -328,13 +328,15 @@ body {
     justify-content: center;
     border-radius: 12px;
     margin-right: 14px;
-    background: linear-gradient(135deg, #5e2ced, #a531e0);
-    box-shadow: 0 6px 14px rgba(94, 44, 237, 0.3);
+    background: linear-gradient(135deg, #3a14a0, #6d1bb0);
+    box-shadow: 0 6px 14px rgba(58, 20, 160, 0.35);
 }
 
 .about-content .info-icon i {
     color: #fff;
-    font-size: 20px;
+    font-size: 23px;
+    line-height: 1;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
 }
 
 .about-content .info-text p {
@@ -386,28 +388,78 @@ body {
     opacity: 1;
 }
 
-.skill-tags {
+/* Tech logo wall: brand logos in a responsive grid */
+.skill-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.logo-item {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     gap: 8px;
+    padding: 14px 6px 12px;
+    border-radius: 14px;
+    background: #faf9ff;
+    border: 1px solid #eceaf6;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.skill-tags span {
-    font-size: 13px;
-    font-weight: 500;
-    color: #4a4a68;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: #f3f1fb;
-    border: 1px solid #e7e3f8;
-    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+.logo-item:hover {
+    transform: translateY(-4px);
+    border-color: #d8d0f5;
+    box-shadow: 0 10px 22px rgba(94, 44, 237, 0.14);
 }
 
-.skill-tags span:hover {
-    background: linear-gradient(135deg, #5e2ced, #a531e0);
-    color: #fff;
-    transform: translateY(-2px);
+.logo-item i {
+    font-size: 30px;
+    line-height: 1;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+/* GitHub / Unity logos are dark monochrome — nudge to brand neutral */
+.logo-item .devicon-github-original::before,
+.logo-item .devicon-unity-original::before {
+    color: #24292f;
+}
+
+.logo-item span:last-child {
+    font-size: 11px;
+    font-weight: 600;
+    color: #5b5b76;
+    text-align: center;
+    line-height: 1.25;
+}
+
+/* Monogram fallback for techs without a brand logo */
+.mono-badge {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff !important;
+    background: linear-gradient(135deg, #6d28d9, #9333ea);
+    letter-spacing: -0.3px;
+}
+
+.mono-badge.office-w { background: linear-gradient(135deg, #1b4ca1, #2b6fd6); }
+.mono-badge.office-x { background: linear-gradient(135deg, #1d7a45, #2aa765); }
+.mono-badge.office-p { background: linear-gradient(135deg, #c43e1c, #e06236); }
+.mono-badge.mono-dark { background: linear-gradient(135deg, #20232a, #3b3f47); }
+
+@media (max-width: 480px) {
+    .skill-logos {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /*------------------------------------------------------
@@ -443,10 +495,13 @@ body {
 #experience .badge {
     background: linear-gradient(135deg, #5e2ced, #a531e0) !important;
     color: #fff !important;
-    font-size: 12px;
-    padding: 8px 12px;
-    border-radius: 999px;
+    font-size: 11px;
+    padding: 7px 10px;
+    border-radius: 14px;
     border: none !important;
+    white-space: normal;
+    line-height: 1.4;
+    max-width: 100%;
 }
 
 #experience .border-end {
