@@ -12,6 +12,13 @@ body {
     overflow-x: hidden;
 }
 
+/* width/height attributes on <img> reserve layout space and avoid shifting,
+   but the template's `img { max-width: 100% }` never paired it with
+   height:auto — without this the attribute height wins and images squash */
+img {
+    height: auto;
+}
+
 /*------------------------------------------------------
   Reusable animated gradient text
 ------------------------------------------------------*/
@@ -384,7 +391,10 @@ body {
 /* Tech logo wall: brand logos in a responsive grid */
 .skill-logos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* `repeat(4, 1fr)` floors each track at min-content, so the longest label
+       (PostgreSQL, PowerPoint) pushed the grid past the card's width on
+       narrower desktops — let the column count follow the space available */
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     gap: 10px;
 }
 
@@ -393,8 +403,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    min-width: 0;
     gap: 8px;
-    padding: 14px 6px 12px;
+    padding: 14px 4px 12px;
     border-radius: 14px;
     background: #faf9ff;
     border: 1px solid #eceaf6;
@@ -473,6 +484,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     min-height: 2.6em;
+    overflow-wrap: anywhere;
 }
 
 /* GitHub / Unity logos are dark monochrome — nudge to brand neutral */
@@ -482,8 +494,9 @@ body {
 }
 
 .logo-item span:last-child {
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
+    letter-spacing: -0.1px;
     color: #5b5b76;
     text-align: center;
     line-height: 1.25;
@@ -513,12 +526,6 @@ body {
 .mono-badge.office-x { background: linear-gradient(135deg, #1d7a45, #2aa765); }
 .mono-badge.office-p { background: linear-gradient(135deg, #c43e1c, #e06236); }
 .mono-badge.mono-dark { background: linear-gradient(135deg, #20232a, #3b3f47); }
-
-@media (max-width: 480px) {
-    .skill-logos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 /*------------------------------------------------------
   Experience: timeline accent + tag chips
