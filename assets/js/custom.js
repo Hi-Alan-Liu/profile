@@ -87,6 +87,12 @@
     }
 
     /*--------------------------------------------------
+      Footer: keep the copyright year current
+    --------------------------------------------------*/
+    var yearEl = document.getElementById('year');
+    if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+    /*--------------------------------------------------
       Portfolio show-more toggle
     --------------------------------------------------*/
     var toggleBtn = document.getElementById('work-toggle');
