@@ -2,13 +2,6 @@
     
     "use strict";
     
-    //===== Prealoder
-    
-    $(window).on('load', function(event) {
-        $('.preloader').delay(500).fadeOut(500);
-    });
-    
-    
     //===== Mobile Menu 
     
     $(".navbar-toggler").on('click', function() {
@@ -48,7 +41,9 @@
 
         scrollLink.each(function() {
 
-            var sectionOffset = $(this.hash).offset().top - 73;
+            var $section = $(this.hash);
+            if (!$section.length) { return; }
+            var sectionOffset = $section.offset().top - 73;
 
             if ( sectionOffset <= scrollbarLocation ) {
                 $(this).parent().addClass('active');
@@ -68,25 +63,6 @@
         };
     };
     parallaxMouse();
-    
-    
-    //===== Progress Bar
-    
-    if($('.progress-line').length){
-        $('.progress-line').appear(function(){
-            var el = $(this);
-            var percent = el.data('width');
-            $(el).css('width',percent+'%');
-        },{accY: 0});
-    }
-    
-    
-    //===== Counter Up
-    
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1600,
-    });
     
     
     //===== Magnific Popup

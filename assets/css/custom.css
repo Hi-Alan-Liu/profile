@@ -154,19 +154,12 @@ body {
 }
 
 /* action row: revealed/expanded on hover */
+/* always visible — hiding the actions behind :hover made them undiscoverable
+   on desktop and impossible to anticipate on touch */
 .pf-actions {
     display: flex;
     align-items: center;
     gap: 12px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
-}
-
-.pf-card:hover .pf-actions {
-    max-height: 60px;
-    opacity: 1;
     margin-top: 12px;
 }
 
@@ -201,15 +194,6 @@ body {
 
 .pf-actions .pf-go:hover {
     transform: translateX(3px);
-}
-
-/* touch / no-hover devices and small screens: always show the actions */
-@media (hover: none), (max-width: 991px) {
-    .pf-actions {
-        max-height: 60px;
-        opacity: 1;
-        margin-top: 12px;
-    }
 }
 
 /*------------------------------------------------------
@@ -667,6 +651,23 @@ body {
     line-height: 1;
 }
 
+/* the template pins .header-social to the bottom of a fixed-height hero;
+   the extra pitch line + second CTA need that hero to be taller on phones */
+@media (max-width: 767px) {
+    .header-content {
+        height: 640px;
+    }
+
+    .hero-pitch {
+        margin-bottom: 22px;
+    }
+
+    .hero-cta a {
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+}
+
 /*------------------------------------------------------
   Experience: real bullet lists (was bare <li> + <br> spacers)
 ------------------------------------------------------*/
@@ -707,4 +708,292 @@ button:focus-visible {
     outline: 2px solid #5e2ced;
     outline-offset: 3px;
     border-radius: 4px;
+}
+
+
+/*------------------------------------------------------
+  104 resume badge inside the social icon rows
+------------------------------------------------------*/
+.social-104 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/*------------------------------------------------------
+  About: lead paragraph + trait cards
+  (was a four-paragraph wall of text nobody finished on mobile)
+------------------------------------------------------*/
+.about-lead {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #4a4a63;
+}
+
+.about-traits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+@media (max-width: 991px) {
+    .about-traits {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trait-card {
+    padding: 24px 22px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid #ececf4;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trait-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(94, 44, 237, 0.12);
+}
+
+.trait-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #5e2ced, #a531e0);
+    box-shadow: 0 6px 14px rgba(94, 44, 237, 0.3);
+}
+
+.trait-icon i {
+    font-size: 20px;
+    color: #fff;
+    line-height: 1;
+}
+
+.trait-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f1f3a;
+    margin-bottom: 10px;
+}
+
+.trait-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #5d5d75;
+}
+
+/* contact chips become real tel:/mailto: targets */
+.info-link {
+    color: #555;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.info-link:hover,
+.info-link:focus {
+    color: #5e2ced;
+    border-bottom-color: rgba(94, 44, 237, 0.4);
+}
+
+/*------------------------------------------------------
+  Portfolio: group headings + commercial work cards
+------------------------------------------------------*/
+.group-title {
+    position: relative;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f1f3a;
+}
+
+.group-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 22px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #5e2ced, #ff5b94);
+}
+
+.group-note {
+    margin-bottom: 18px;
+    padding-left: 16px;
+    font-size: 14px;
+    color: #6b7090;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.cw-card {
+    display: block;
+    height: 100%;
+    margin-top: 30px;
+    padding: 26px 24px 22px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #eef0f6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cw-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(94, 44, 237, 0.14);
+}
+
+.cw-meta {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #8a8fb0;
+}
+
+.cw-title {
+    margin: 8px 0 16px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #1f1f3a;
+}
+
+.cw-body {
+    margin: 0 0 16px;
+}
+
+.cw-body dt {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #5e2ced;
+    background: rgba(94, 44, 237, 0.08);
+}
+
+.cw-body dd {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #5d5d75;
+}
+
+.cw-body dd:last-child {
+    margin-bottom: 0;
+}
+
+.cw-card .exp-tags {
+    margin-top: 16px;
+}
+
+/*------------------------------------------------------
+  Contact: closing call to action
+------------------------------------------------------*/
+.contact-cta {
+    padding: 90px 0 100px;
+}
+
+.cta-box {
+    padding: 52px 40px 46px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #2a1065 0%, #5e2ced 55%, #a531e0 100%);
+    box-shadow: 0 24px 60px rgba(94, 44, 237, 0.28);
+}
+
+.cta-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.45;
+}
+
+.cta-sub {
+    margin-top: 14px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.cta-primary,
+.cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.cta-primary {
+    color: #5e2ced;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.cta-primary:hover,
+.cta-primary:focus {
+    color: #4a1fc4;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24);
+}
+
+.cta-ghost {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cta-ghost:hover,
+.cta-ghost:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.26);
+    transform: translateY(-2px);
+}
+
+.cta-loc {
+    margin-top: 26px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.cta-loc i {
+    margin-right: 4px;
+}
+
+@media (max-width: 575px) {
+    .cta-box {
+        padding: 40px 22px 36px;
+    }
+
+    .cta-title {
+        font-size: 23px;
+    }
+
+    .cta-actions a {
+        width: 100%;
+        justify-content: center;
+    }
 }

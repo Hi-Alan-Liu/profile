@@ -16,6 +16,9 @@
         '#skill .single-skill',
         '#experience .col.py-2',
         '#work .pf-card',
+        '#work .cw-card',
+        '#about .trait-card',
+        '#contact .cta-box',
         '.section-title'
     ];
 
@@ -85,6 +88,41 @@
 
         tick();
     }
+
+    /*--------------------------------------------------
+      Contact details assembled at runtime
+      Keeps the address out of the served markup; the inline <noscript>
+      keeps it readable when JS is unavailable.
+    --------------------------------------------------*/
+    document.querySelectorAll('.js-contact').forEach(function (el) {
+        var kind = el.getAttribute('data-kind');
+        var a = el.getAttribute('data-a');
+        var b = el.getAttribute('data-b');
+        var c = el.getAttribute('data-c');
+        var at = String.fromCharCode(64);
+
+        if (kind === 'mail-btn') {
+            el.setAttribute('href', 'mailto:' + a + at + b +
+                '?subject=' + encodeURIComponent('工作機會洽談｜Alan Liu'));
+            return;
+        }
+
+        var link = document.createElement('a');
+        link.className = 'info-link';
+
+        if (kind === 'mail') {
+            link.href = 'mailto:' + a + at + b;
+            link.textContent = a + at + b;
+        } else if (kind === 'tel') {
+            link.href = 'tel:+886' + (a + b + c).slice(1);
+            link.textContent = a + '-' + b + '-' + c;
+        } else {
+            return;
+        }
+
+        el.textContent = '';
+        el.appendChild(link);
+    });
 
     /*--------------------------------------------------
       Footer: keep the copyright year current

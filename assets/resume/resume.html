@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<title>劉穎 Alan Liu — 全端工程師履歷</title>
+<style>
+    @page { size: A4; margin: 13mm 14mm; }
+
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+        font-size: 10.2pt;
+        line-height: 1.62;
+        color: #26263a;
+    }
+
+    a { color: #4a1fc4; text-decoration: none; }
+
+    /* ---------- masthead ---------- */
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 10px;
+        border-bottom: 2.5px solid #5e2ced;
+    }
+
+    .name { font-size: 21pt; font-weight: 700; letter-spacing: 0.5px; }
+    .role { margin-top: 2px; font-size: 11pt; font-weight: 600; color: #5e2ced; }
+    .contact { text-align: right; font-size: 8.8pt; line-height: 1.75; color: #4b4b63; }
+
+    /* ---------- sections ---------- */
+    h2 {
+        margin: 16px 0 8px;
+        padding-left: 9px;
+        font-size: 11.5pt;
+        font-weight: 700;
+        border-left: 4px solid #5e2ced;
+        page-break-after: avoid;
+    }
+
+    .summary { margin: 0; color: #3c3c55; }
+
+    .skills { width: 100%; border-collapse: collapse; }
+    .skills th {
+        width: 78px;
+        padding: 3px 8px 3px 0;
+        text-align: left;
+        vertical-align: top;
+        font-size: 9.2pt;
+        color: #5e2ced;
+        white-space: nowrap;
+    }
+    .skills td { padding: 3px 0; vertical-align: top; font-size: 9.5pt; }
+
+    .job { margin-bottom: 13px; page-break-inside: avoid; }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+    .job-co { font-size: 11pt; font-weight: 700; }
+    .job-date { font-size: 8.8pt; color: #6b6b85; white-space: nowrap; padding-left: 10px; }
+    .job-role { font-size: 9.4pt; font-weight: 600; color: #5e2ced; margin-bottom: 4px; }
+
+    ul { margin: 4px 0 0; padding-left: 16px; }
+    li { margin-bottom: 2.5px; }
+
+    .tags { margin-top: 5px; font-size: 8.4pt; color: #6b6b85; }
+
+    .proj { margin-bottom: 9px; page-break-inside: avoid; }
+    .proj-t { font-weight: 700; font-size: 10pt; }
+    .proj-m { font-size: 8.6pt; color: #6b6b85; }
+    .proj p { margin: 2px 0 0; font-size: 9.4pt; }
+
+    .works { margin: 0; padding-left: 16px; font-size: 9.4pt; }
+</style>
+</head>
+<body>
+
+<div class="head">
+    <div>
+        <div class="name">劉穎　Alan Liu</div>
+        <div class="role">全端工程師 ‧ Full-Stack Engineer</div>
+    </div>
+    <div class="contact">
+        pa013971@gmail.com　｜　0908-630-926<br>
+        高雄 Kaohsiung, Taiwan<br>
+        <a href="https://hi-alan-liu.github.io/profile/">hi-alan-liu.github.io/profile</a>　｜　<a href="https://github.com/Hi-Alan-Liu">github.com/Hi-Alan-Liu</a>
+    </div>
+</div>
+
+<h2>專業摘要</h2>
+<p class="summary">
+    擁有 8 年專案開發經驗的全端工程師，擅長前端框架開發、後端邏輯撰寫與資料庫設計。
+    技術主軸為 ASP.NET (C#) 與 Vue.js，並具備 Ruby on Rails 系統重構經驗與 AWS 雲端架構規劃與維運能力。
+    曾擔任小組長帶領 3 位工程師，導入 code review 制度與敏捷開發流程。
+</p>
+
+<h2>技術能力</h2>
+<table class="skills">
+    <tr><th>前端</th><td>Vue.js、JavaScript、TypeScript、HTML、CSS、Sass、jQuery、Bootstrap、Tailwind、GSAP、npm / Yarn</td></tr>
+    <tr><th>後端</th><td>ASP.NET Core (C#)、Ruby on Rails、Node.js、Python</td></tr>
+    <tr><th>資料庫</th><td>MS SQL、MySQL、PostgreSQL、Redis</td></tr>
+    <tr><th>雲端 / 維運</th><td>AWS（EC2、S3、RDS、SES、Bedrock、AutoScaling、Load Balancer）、Docker、Linux、Nginx、IIS</td></tr>
+    <tr><th>協作</th><td>Git / GitHub、Git Flow、Scrum、Code Review、Trello、Redmine</td></tr>
+</table>
+
+<h2>工作經歷</h2>
+
+<div class="job">
+    <div class="job-head">
+        <span class="job-co">亞家管理顧問股份有限公司</span>
+        <span class="job-date">2024.05 – 至今</span>
+    </div>
+    <div class="job-role">全端工程師</div>
+    <ul>
+        <li>負責規劃與維運 AWS 雲端架構，涵蓋 EC2、S3、RDS、Bedrock 等核心服務，確保系統穩定性與擴展性</li>
+        <li>主導開發履歷 AI 分析平台，整合 Bedrock 模型與自然語言處理技術，協助使用者強化履歷內容品質</li>
+        <li>使用 ASP.NET (C#) 與 Vue.js 實作全端系統功能，包括前台互動介面、後台 API、資料庫操作（MS SQL）</li>
+        <li>擔任小組長，帶領 3 位工程師，導入 code review 制度、撰寫技術文件、提升團隊開發流程與程式碼品質</li>
+        <li>協助公司導入敏捷開發流程（Scrum）與版本控制策略（Git Flow），提升專案交付效率與可維護性</li>
+    </ul>
+    <div class="tags">AWS ‧ ASP.NET ‧ Vue.js ‧ MS SQL ‧ Code Review ‧ Agile</div>
+</div>
+
+<div class="job">
+    <div class="job-head">
+        <span class="job-co">先進醫資股份有限公司</span>
+        <span class="job-date">2020.05 – 2024.04</span>
+    </div>
+    <div class="job-role">ASP.NET 程式設計師</div>
+    <ul>
+        <li>參與核心系統開發與 API 設計：設計並實作後台關鍵模組，撰寫技術文件以提升維護效率與團隊協作品質</li>
+        <li>整合第三方服務：串接 NewebPay 金流、Google Maps 定位、TokBox 視訊會議，擴展系統應用情境與用戶體驗</li>
+        <li>導入雲端自動擴展機制：建置 AWS AutoScaling 與 Load Balancer，有效提升高併發時的系統穩定性與可擴展性</li>
+        <li>推動 Docker 容器化部署：建立一致性部署流程，顯著降低環境差異導致的錯誤率與維運成本</li>
+        <li>開發資料報表與視覺化模組，協助用戶進行營運決策分析；並整合 Semantic Kernel (LLM) 與 OpenAI GPT API 開發 AI 智能聊天機器人</li>
+        <li>管理 AWS 雲端基礎架構：負責 EC2、S3、SES、RDS 等服務的建置與維運，確保服務高可用性與安全性</li>
+        <li>技術演進：初期以 Ruby on Rails 開發與維護，後主導系統重構與效能優化，技術轉向 ASP.NET (C#)</li>
+    </ul>
+    <div class="tags">Ruby on Rails ‧ ASP.NET ‧ AWS ‧ Docker ‧ DevOps ‧ AI</div>
+</div>
+
+<div class="job">
+    <div class="job-head">
+        <span class="job-co">維亞娛樂股份有限公司</span>
+        <span class="job-date">2018.04 – 2020.04</span>
+    </div>
+    <div class="job-role">Ruby on Rails Engineer</div>
+    <ul>
+        <li>負責設計與開發遊戲後台管理系統，包含 API 設計與管理介面前端開發，強化遊戲營運管理流程</li>
+        <li>實作遊戲金流系統，整合機台投幣支付方式，並開發交易記錄 API 與報表統計模組</li>
+        <li>開發完整會員管理系統，支援後台管理、遊戲平台登入與手機 APP 資料同步</li>
+        <li>使用 Vue.js + Cordova 開發跨平台 APP，整合排行榜、活動公告、點數儲值等功能模組</li>
+        <li>優化資料結構與查詢效率，提升平台在高併發情境下的穩定度與回應速度</li>
+    </ul>
+    <div class="tags">Ruby on Rails ‧ Vue.js ‧ Cordova</div>
+</div>
+
+<div class="job">
+    <div class="job-head">
+        <span class="job-co">奧可森遊戲股份有限公司</span>
+        <span class="job-date">2017.07 – 2018.03</span>
+    </div>
+    <div class="job-role">Ruby on Rails 實習工程師</div>
+    <ul>
+        <li>於大四期間進入職場實習，參與實際專案開發，累積實務經驗</li>
+        <li>負責公司形象網站的日常維護與優化，改善版面呈現與載入效能</li>
+        <li>開發遊戲排行榜系統，設計並實作 RESTful API，供 Unity 客戶端串接使用</li>
+        <li>參與票務系統開發，實作票券管理 API 與購票流程，整合統計分析模組支援營運決策</li>
+    </ul>
+    <div class="tags">Ruby on Rails ‧ MySQL ‧ Git ‧ RESTful API</div>
+</div>
+
+<h2>代表專案</h2>
+
+<div class="proj">
+    <div class="proj-t">履歷 AI 分析平台 <span class="proj-m">／ 亞家管理顧問 ‧ 2024 – Now</span></div>
+    <p>主導平台開發，整合 AWS Bedrock 模型與自然語言處理技術；以 ASP.NET (C#) 與 Vue.js 實作前台互動介面、後台 API 與 MS SQL 資料庫操作，並負責其所倚賴的雲端架構規劃與維運。</p>
+</div>
+
+<div class="proj">
+    <div class="proj-t">醫療資訊 SaaS 核心系統 <span class="proj-m">／ 先進醫資 ‧ 2020 – 2024</span></div>
+    <p>設計並實作後台關鍵模組與 API；串接 NewebPay 金流、Google Maps 定位與 TokBox 視訊會議；建置 AWS AutoScaling 與 Load Balancer，並推動 Docker 容器化部署以降低環境差異導致的錯誤率與維運成本。</p>
+</div>
+
+<div class="proj">
+    <div class="proj-t">遊戲營運後台與金流系統 <span class="proj-m">／ 維亞娛樂 ‧ 2018 – 2020</span></div>
+    <p>設計遊戲後台管理系統與 API、實作整合機台投幣的金流與交易報表模組、開發支援後台與手機 APP 同步的會員系統，並以 Vue.js + Cordova 開發跨平台行動 APP。</p>
+</div>
+
+<h2>個人作品</h2>
+<ul class="works">
+    <li>自製陀螺配置產生器 — <a href="https://hi-alan-liu.github.io/beyblade-champion/">hi-alan-liu.github.io/beyblade-champion</a></li>
+    <li>Quarto 桌遊 AI 版本 — <a href="https://hi-alan-liu.github.io/quarto-board/">hi-alan-liu.github.io/quarto-board</a></li>
+    <li>Arduino 天堂 W 神器 — <a href="https://hi-alan-liu.github.io/blog/Arduino-lineagew/">hi-alan-liu.github.io/blog/Arduino-lineagew</a></li>
+    <li>Gaole 機台地圖 / 上色卡序表、黃金蘋果模擬器 — <a href="https://github.com/Hi-Alan-Liu?tab=repositories">github.com/Hi-Alan-Liu</a></li>
+</ul>
+
+</body>
+</html>
