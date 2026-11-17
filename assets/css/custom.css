@@ -717,15 +717,6 @@ button:focus-visible {
 
 
 /*------------------------------------------------------
-  104 resume badge inside the social icon rows
-------------------------------------------------------*/
-.social-104 {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
-
-/*------------------------------------------------------
   About: lead paragraph + trait cards
   (was a four-paragraph wall of text nobody finished on mobile)
 ------------------------------------------------------*/
