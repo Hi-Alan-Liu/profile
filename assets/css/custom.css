@@ -522,10 +522,8 @@ img {
     margin: 1px auto;
 }
 
-.mono-badge.office-w { background: linear-gradient(135deg, #1b4ca1, #2b6fd6); }
-.mono-badge.office-x { background: linear-gradient(135deg, #1d7a45, #2aa765); }
-.mono-badge.office-p { background: linear-gradient(135deg, #c43e1c, #e06236); }
 .mono-badge.mono-dark { background: linear-gradient(135deg, #20232a, #3b3f47); }
+.mono-badge.mono-claude { background: linear-gradient(135deg, #c15f3c, #d97757); }
 
 /*------------------------------------------------------
   Experience: timeline accent + tag chips
